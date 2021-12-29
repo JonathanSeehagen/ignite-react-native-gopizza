@@ -9,7 +9,7 @@ import { Input } from '@components/Input';
 import { Button } from '@components/Button';
 
 import {
-  Contanier,
+  Container,
   Content,
   Title,
   Brand,
@@ -32,7 +32,7 @@ export function SignIn() {
   }
 
   return (
-    <Contanier>
+    <Container>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Content>
           <Brand source={brandImg} />
@@ -66,6 +66,6 @@ export function SignIn() {
           />
         </Content>
       </KeyboardAvoidingView>
-    </Contanier>
+    </Container>
   )
 }

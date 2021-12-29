@@ -4,12 +4,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 import { ThemeProvider } from 'styled-components/native';
-import { AuthProvider } from '@hooks/auth'
-
-import theme from './src/theme'
-
-import { SignIn } from '@screens/SignIn';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import { AuthProvider } from '@hooks/auth'
+import theme from './src/theme'
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +25,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <StatusBar style="light" translucent backgroundColor="transparent" />
         <AuthProvider>
-          <SignIn />
+          <Routes />
         </AuthProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
