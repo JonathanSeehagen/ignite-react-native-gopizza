@@ -68,8 +68,6 @@ function AuthProvider({ children }: AuthProviderProps) {
           .catch(() => Alert.alert('Login', 'Não foi possível buscar os dados de perfil do usuário.'))
       })
       .catch(error => {
-        console.log('error', error);
-
         const { code } = error;
 
         if (code === 'auth/user-not-found' || code === 'auth/wrong-password') {
@@ -104,8 +102,6 @@ function AuthProvider({ children }: AuthProviderProps) {
     if (!email) {
       return Alert.alert('Redefinir Senha', 'Informe o e-mail');
     }
-
-    console.log(email)
 
     auth()
       .sendPasswordResetEmail(email)
